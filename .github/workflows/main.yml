@@ -1,0 +1,29 @@
+name: Build
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup repo
+        uses: actions/checkout@v3
+      
+      - name: Download shim
+        run: curl -OL https://mirror.the-repo.org/RMA/Shims/octopus.bin
+        
+      - name: Build shim
+        run: |
+          cd sh1mmer/wax
+          wget https://dl.sh1mmer.me/build-tools/chromebrew/chromebrew.tar.gz
+          sudo bash wax.sh octopus.bin
+          
+      - name: ls
+        run: ls
+          
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          path: octopus.bin
