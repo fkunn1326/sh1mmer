@@ -45,10 +45,11 @@ loop=$(losetup -f)
 losetup -P $loop $bin
 
 echo "Making arch partition"
-while [ ! -f ${loop}p13 ]
+while [ ! -f /dev/loop3p13 ]
 do
   sleep 2
 done
+ls /dev/loop3p13 
 mkfs -t ext2 -L arch ${loop}p13 # ext2 so we can use skid protection features
 echo "Making ROOT mountable"
 sh make_dev_ssd_no_resign.sh --remove_rootfs_verification -i ${loop}
