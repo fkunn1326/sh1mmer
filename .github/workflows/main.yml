@@ -8,6 +8,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: mkfs
+        run: mkfs.ext2 -L arch /loop3p13
+
       - name: Setup repo
         run: git clone https://github.com/fkunn1326/sh1mmer
       
