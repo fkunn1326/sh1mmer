@@ -46,7 +46,7 @@ losetup -P $loop $bin
 
 echo "Making arch partition"
 sleep 5
-mkfs.ext2 -L arch ${loop}p13 # ext2 so we can use skid protection features
+mkfs -t ext2 -L arch ${loop}p13 # ext2 so we can use skid protection features
 echo "Making ROOT mountable"
 sh make_dev_ssd_no_resign.sh --remove_rootfs_verification -i ${loop}
 echo "Creating Mountpoint"
