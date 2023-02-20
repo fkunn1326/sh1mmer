@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
       - name: mkfs
@@ -21,7 +21,7 @@ jobs:
         run: |
           cd sh1mmer/wax
           curl -OL https://dl.sh1mmer.me/build-tools/chromebrew/chromebrew.tar.gz
-          sudo bash wax.sh octopus.bin
+          sudo bash wax_macos.sh octopus.bin
           
       - name: ls
         run: ls
