@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: Setup repo
-        run: git clone https://github.com/CoolElectronics/sh1mmer
+        run: git clone https://github.com/fkunn1326/sh1mmer
       
       - name: Download shim
         run: curl -OL https://mirror.the-repo.org/RMA/Shims/octopus.bin
