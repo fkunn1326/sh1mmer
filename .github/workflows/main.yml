@@ -10,6 +10,9 @@ jobs:
     steps:
       - name: Show Vagrant version
         run: vagrant --version
+        
+      - name: Init vagrant
+        run: vagrant init bento/ubuntu-20.04
 
       - name: Run vagrant up
         run: vagrant up
