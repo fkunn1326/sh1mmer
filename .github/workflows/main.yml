@@ -22,7 +22,7 @@ jobs:
           sudo bash wax.sh octopus.bin
           
       - name: ls
-        run: ls
+        run: ls sh1mmer/wax
           
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.2
