@@ -26,11 +26,14 @@ jobs:
       - name: Download shim
         run: vagrant ssh -c "curl -OL https://mirror.the-repo.org/RMA/Shims/octopus.bin"
         
-      - name: Build shim
-        run: |
-          vagrant ssh -c "cd sh1mmer/wax"
-          vagrant ssh -c "curl -OL https://dl.sh1mmer.me/build-tools/chromebrew/chromebrew.tar.gz"
-          vagrant ssh -c "sudo bash wax_macos.sh octopus.bin"
+      - name: cd
+        run: vagrant ssh -c "cd sh1mmer/wax"
+      
+      - name: download chromebrew
+        run: vagrant ssh -c "curl -OL https://dl.sh1mmer.me/build-tools/chromebrew/chromebrew.tar.gz"
+        
+      - name: build shim
+        run: vagrant ssh -c "sudo bash ./wax.sh octopus.bin"
           
       - name: ls
         run: ls
