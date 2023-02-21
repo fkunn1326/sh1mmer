@@ -12,13 +12,13 @@ jobs:
         run: vagrant --version
         
       - name: Init vagrant
-        run: vagrant init archlinux/archlinux
+        run: vagrant init bento/ubuntu-22.04
 
       - name: Run vagrant up
         run: vagrant up
 
       - name: Install packages
-        run: vagrant ssh -c "sudo pacman -S git cgpt wget"
+        run: vagrant ssh -c "sudo apt install git cgpt wget"
 
       - name: Setup repo
         run: vagrant ssh -c "git clone https://github.com/fkunn1326/sh1mmer"
