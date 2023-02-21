@@ -10,6 +10,9 @@ jobs:
     steps:
       - name: Setup repo
         run: git clone https://github.com/fkunn1326/sh1mmer
+
+      - name: Install package
+        run: sudo apt install -y cgpt
         
       - name: Build shim
         run: |
