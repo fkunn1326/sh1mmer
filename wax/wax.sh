@@ -1,4 +1,9 @@
 #!/bin/bash
+cd sh1mmer/wax
+
+curl -OL https://mirror.the-repo.org/RMA/Shims/octopus.bin
+curl -OL https://dl.sh1mmer.me/build-tools/chromebrew/chromebrew.tar.gz
+
 set -e
 if [ "$EUID" -ne 0 ]; then
     echo "Please run as root"

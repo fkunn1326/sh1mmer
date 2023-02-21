@@ -22,18 +22,9 @@ jobs:
 
       - name: Setup repo
         run: vagrant ssh -c "git clone https://github.com/fkunn1326/sh1mmer"
-      
-     # - name: Download shim
-     #   run: vagrant ssh -c "curl -OL https://mirror.the-repo.org/RMA/Shims/octopus.bin"
-        
-      - name: cd
-        run: vagrant ssh -c "cd sh1mmer/wax"
-      
-      # - name: download chromebrew
-      #   run: vagrant ssh -c "curl -OL https://dl.sh1mmer.me/build-tools/chromebrew/chromebrew.tar.gz"
-        
+              
       - name: build shim
-        run: vagrant ssh -c "ls"
+        run: vagrant ssh -c "sudo bash sh1mmer/wax/wax.sh"
           
       - name: ls
         run: ls
