@@ -18,7 +18,7 @@ jobs:
         run: vagrant up
 
       - name: Install packages
-        run: vagrant ssh -c "sudo apt install git cgpt wget"
+        run: vagrant ssh -c "sudo apt install -y git cgpt wget"
 
       - name: Setup repo
         run: vagrant ssh -c "git clone https://github.com/fkunn1326/sh1mmer"
