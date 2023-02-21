@@ -12,13 +12,13 @@ jobs:
         run: vagrant --version
         
       - name: Init vagrant
-        run: vagrant init bento/ubuntu-20.04
+        run: vagrant init archlinux/archlinux
 
       - name: Run vagrant up
         run: vagrant up
 
-      - name: ssh into box after boot
-        run: vagrant ssh -c "mkfs.ext2 -L arch /loop3p13"
+      - name: uname
+        run: vagrant ssh -c "uname"
 
       - name: Setup repo
         run: vagrant ssh -c "git clone https://github.com/fkunn1326/sh1mmer"
@@ -28,9 +28,9 @@ jobs:
         
       - name: Build shim
         run: |
-          cd sh1mmer/wax
-          curl -OL https://dl.sh1mmer.me/build-tools/chromebrew/chromebrew.tar.gz
-          sudo bash wax_macos.sh octopus.bin
+          vagrant ssh -c "cd sh1mmer/wax"
+          vagrant ssh -c "curl -OL https://dl.sh1mmer.me/build-tools/chromebrew/chromebrew.tar.gz"
+          vagrant ssh -c "sudo bash wax_macos.sh octopus.bin"
           
       - name: ls
         run: ls
