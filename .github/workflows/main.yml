@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: Setup repo
-        run: git clone https://github.com/fkunn1326/sh1mmer
+        run: git clone -b bw-minimal https://github.com/MercuryWorkshop/sh1mmer
 
       - name: Install package
         run: sudo apt install -y cgpt
